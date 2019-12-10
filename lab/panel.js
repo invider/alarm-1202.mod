@@ -63,7 +63,7 @@ const panel = {
             }
         }
         this.blink = env.tuning.blink
-        sfx(res.sfx.input2, 0.7)
+        sfx(res.sfx.type, 0.7)
     },
 
     enter: function() {
