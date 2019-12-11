@@ -69,6 +69,7 @@ const panel = {
     enter: function() {
         if (this.landed) {
             trap('level', this.targetLevel)
+            sfx(res.sfx.powerup, 0.7)
 
         } else {
             if (this.buffer === lab.level.answer) {
@@ -86,6 +87,7 @@ const panel = {
         if (this.landed) {
             this.targetLevel = warp(this.targetLevel - 1,
                 1, _.lvl.level.length)
+            sfx(res.sfx.select, 0.7)
         }
     },
 
@@ -93,6 +95,7 @@ const panel = {
         if (this.landed) {
             this.targetLevel = warp(this.targetLevel + 1,
                 1, _.lvl.level.length)
+            sfx(res.sfx.select, 0.7)
         }
     },
 
@@ -182,10 +185,10 @@ const panel = {
         ctx.fillText(env.msg.level + ': ' + lab.level.id, xbase, ybase)
 
         ybase += this.fontSize + lf
-        ctx.fillText(env.msg.fuel + ': ' + fuel + env.msg.fuelUnit, xbase, ybase)
+        ctx.fillText(env.msg.time + ': ' + time, xbase, ybase)
 
         ybase += this.fontSize + lf
-        ctx.fillText(env.msg.time + ': ' + time, xbase, ybase)
+        ctx.fillText(env.msg.fuel + ': ' + fuel + env.msg.fuelUnit, xbase, ybase)
 
         if (this.landed) {
             // show landing status message
