@@ -73,14 +73,40 @@ const panel = {
     enter: function() {
         if (this.landed) {
 
+            const level = this.targetLevel
+
             lab.transition.transit({
                 fadein: 1,
-                keep: 2,
+                keep: 7,
                 fadeout: 2,
+
+                text: [
+                    {
+                        at: 1,
+                        fadein: 1,
+                        keep: 1,
+                        fadeout: 1,
+
+                        placement: 1,
+                        content: '#ffffff',
+                        font: '28px moon',
+                        msg: lib.math.rnde(env.msg.titles),
+                    },
+                    {
+                        at: 4.5,
+                        fadein: 1,
+                        keep: 1,
+                        fadeout: 1,
+
+                        content: '#ffffff',
+                        font: '38px moon',
+                        msg: env.msg.level + ' ' + level,
+                    },
+                ],
 
                 onKeep: function() {
                     lab.space.paused = true
-                    trap('level', this.targetLevel)
+                    trap('level', level)
                 },
                 onFadeout: function() {
                     trap('levelRun')

@@ -6,7 +6,7 @@ module.exports = {
     fuel: 'fuel',
     fuelUnit: 'lb',
     time: 'time',
-    level: 'level',
+    level: 'Level',
     pressSpace: 'press space to start',
     successfulLanding: 'Successfull Landing!',
     harshLanding: 'Hard Landing!',
@@ -15,7 +15,9 @@ module.exports = {
     title1: '1969',
     title2: 'Low Lunar Orbit...',
 
-    titles: {
-
-    },
+    titles: [
+        'a powerup by invadium.com',
+        'a game by Igor Khotin',
+        'Powered by Collider.JAM Framework'
+    ],
 }

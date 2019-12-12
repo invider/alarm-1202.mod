@@ -6,19 +6,29 @@ function setup() {
 
     lab.transition.transit({
         fadein: 0,
-        keep: 4,
+        keep: 7,
         fadeout: 2,
 
         text: [
             {
-                at: 1,
+                at: 0,
                 fadein: 1,
                 keep: 1,
                 fadeout: 1,
 
                 content: '#ffffff',
-                font: '32px moon',
+                font: '38px moon',
                 msg: env.msg.title1,
+            },
+            {
+                at: 3.5,
+                fadein: 1,
+                keep: 1,
+                fadeout: 1,
+
+                content: '#ffffff',
+                font: '38px moon',
+                msg: env.msg.title2,
             },
         ],
 

@@ -118,11 +118,21 @@ function draw() {
         if (!t.state || t.state === WAIT || t.state === HIDDEN) return
 
         alpha(t.alpha)
-        alignCenter()
-        baseMiddle()
         font(t.font)
         fill(t.content)
-        text(t.msg, rx(.5), ry(.5))
+        baseMiddle()
+
+        let x = rx(.5)
+        let y = ry(.5)
+
+        if (t.placement === 1) {
+            alignRight()
+            x = rx(.97)
+            y = ry(.72)
+        } else {
+            alignCenter()
+        }
+        text(t.msg, x, y)
     })
 
     //text('#' + this.state, rx(.5), ry(.5))
