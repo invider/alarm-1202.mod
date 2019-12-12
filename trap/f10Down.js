@@ -1,4 +1,3 @@
-
 let shots = 0
 
 function f10Down(e) {

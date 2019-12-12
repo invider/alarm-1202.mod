@@ -11,4 +11,11 @@ module.exports = {
     successfulLanding: 'Successfull Landing!',
     harshLanding: 'Hard Landing!',
     crashLanding: 'Crash Landing!',
+
+    title1: '1969',
+    title2: 'Low Lunar Orbit...',
+
+    titles: {
+
+    },
 }

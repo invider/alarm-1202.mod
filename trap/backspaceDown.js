@@ -1,3 +1,3 @@
 function backspaceDown() {
-    lab.panel.input(-1)
+    lab.space.panel.input(-1)
 }

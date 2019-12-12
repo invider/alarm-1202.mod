@@ -32,7 +32,7 @@ const panel = {
     reset: function(digit) {
         this.buffer = 0
         this.landed = false
-        if (lab.level) lab.level.nextProblem()
+        if (lab.space.level) lab.space.level.nextProblem()
     },
 
     /*
@@ -54,32 +54,49 @@ const panel = {
     */
 
     input: function(digit) {
+        if (this.landed) return
+
         if (digit < 0) {
             this.buffer = floor(this.buffer/10)
+            sfx(res.sfx.select, 0.7)
+
         } else {
             this.buffer = this.buffer * 10 + digit
             if (this.buffer > 1000) {
                 this.buffer = digit
             }
+            sfx(res.sfx.type, 0.7)
         }
         this.blink = env.tuning.blink
-        sfx(res.sfx.type, 0.7)
     },
 
     enter: function() {
         if (this.landed) {
-            trap('level', this.targetLevel)
+
+            lab.transition.transit({
+                fadein: 1,
+                keep: 2,
+                fadeout: 2,
+
+                onKeep: function() {
+                    lab.space.paused = true
+                    trap('level', this.targetLevel)
+                },
+                onFadeout: function() {
+                    trap('levelRun')
+                },
+            })
             sfx(res.sfx.powerup, 0.7)
 
         } else {
-            if (this.buffer === lab.level.answer) {
+            if (this.buffer === lab.space.level.answer) {
                 // got the right answer! Perform the burn
-                lab.lander.burn(env.tuning.burn)
+                lab.space.lander.burn(env.tuning.burn)
             } else {
                 lib.sfx(res.sfx.wrong_choice, 0.7)
             }
             this.buffer = 0
-            lab.level.nextProblem()
+            lab.space.level.nextProblem()
         }
     },
 
@@ -131,9 +148,9 @@ const panel = {
 
     draw: function() {
         let time = Math.floor(this.time)
-        let alt = Math.floor(lab.lander.altitude)
-        let speed = Math.floor(lab.lander.speed)
-        let fuel = Math.floor(lab.lander.fuel)
+        let alt = Math.floor(lab.space.lander.altitude)
+        let speed = Math.floor(lab.space.lander.speed)
+        let fuel = Math.floor(lab.space.lander.fuel)
 
         blocky()
 
@@ -182,7 +199,7 @@ const panel = {
         ybase = yanchor2 + 14*s
         ctx.fillStyle = '#40FF20'
 
-        ctx.fillText(env.msg.level + ': ' + lab.level.id, xbase, ybase)
+        ctx.fillText(env.msg.level + ': ' + lab.space.level.id, xbase, ybase)
 
         ybase += this.fontSize + lf
         ctx.fillText(env.msg.time + ': ' + time, xbase, ybase)
@@ -244,8 +261,8 @@ const panel = {
                 input = '' + this.buffer
                 if (this.blink > 0 && input.length < 3) input += '_'
             }
-            if (lab.level) {
-                text(lab.level.problem + ' = ' + input,
+            if (lab.space.level) {
+                text(lab.space.level.problem + ' = ' + input,
                     xanchor3 + mw3*0.15,
                     yanchor3 + mh3*0.45)
             }

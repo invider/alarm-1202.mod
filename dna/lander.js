@@ -14,7 +14,7 @@ module.exports = function(init) {
         flames: [],
 
         reset: function(st) {
-            if (lab.vent) lab.detach(lab.vent)
+            if (lab.space.vent) lab.space.detach(lab.space.vent)
             this.angle = 0
             sys.augment(this, st)
         },
@@ -26,10 +26,13 @@ module.exports = function(init) {
 
         init: function() {
             this.adjust()
-            this.jet()
             this.img = res['lander-bug']
             this.w = this.img.width * this.s
             this.h = this.img.height * this.s
+        },
+
+        initBurn: function() {
+            this.jet()
         },
 
         jet: function() {
@@ -77,7 +80,7 @@ module.exports = function(init) {
             d.img = false
             d.color = '#a0a0d0'
 
-            lab.attach(d)
+            lab.space.attach(d)
         },
 
         dust: function() {
@@ -122,9 +125,9 @@ module.exports = function(init) {
             d3.img = false
             d3.color = '#808080'
 
-            lab.attach(d1)
-            lab.attach(d2)
-            lab.attach(d3)
+            lab.space.attach(d1)
+            lab.space.attach(d2)
+            lab.space.attach(d3)
         },
 
         crash: function() {
@@ -145,7 +148,7 @@ module.exports = function(init) {
             d.img = false
             d.color = '#808080'
 
-            lab.attach(d)
+            lab.space.attach(d)
         },
 
         burn: function(val) {

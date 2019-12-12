@@ -1,3 +1,3 @@
 function arrowLeftDown(e) {
-    lab.panel.left()
+    lab.space.panel.left()
 }

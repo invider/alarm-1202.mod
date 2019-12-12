@@ -36,7 +36,7 @@ return {
         // determine stars speed
         if (!speed) {
             speed = 0
-            if (lab.lander) speed = lab.lander.speed
+            if (lab.space.lander) speed = lab.space.lander.speed
         }
 
         // move stars

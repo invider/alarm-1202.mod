@@ -1,3 +1,3 @@
 function spaceDown(e) {
-    lab.panel.enter()
+    lab.space.panel.enter()
 }

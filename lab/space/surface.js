@@ -6,7 +6,7 @@ let VISIBILITY_ALT= 100
 let ZERO_LEVEL = 0.9
 
 function draw() {
-    const alt = lab.lander.altitude
+    const alt = lab.space.lander.altitude
 
     if (alt < VISIBILITY_ALT) {
         let surfaceHeight = ZERO_LEVEL * ctx.height

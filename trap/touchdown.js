@@ -3,5 +3,5 @@ module.exports = function(speed) {
     if (speed > env.tuning.redSpeed) accuracy = 0
     else if (speed > env.tuning.yellowSpeed) accuracy = 1
 
-    lab.panel.land(accuracy, speed)
+    lab.space.panel.land(accuracy, speed)
 }
