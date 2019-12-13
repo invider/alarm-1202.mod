@@ -294,5 +294,13 @@ const panel = {
             }
 
         }
+
+        if ($.paused) {
+            alignCenter()
+            baseMiddle()
+            font(this.font2)
+            fill(env.style.pausedColor)
+            text(env.msg.paused, ctx.width/2, ctx.height * 0.5)
+        }
     }
 }

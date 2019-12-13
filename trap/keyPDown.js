@@ -1,0 +1,3 @@
+function keyPDown() {
+    $.paused = !$.paused
+}

@@ -155,7 +155,7 @@ module.exports = function(init) {
             if (this.fuel > 0) {
                 this.fuel = max(this.fuel - env.tuning.burnFuel, 0)
                 this.speed -= val
-                if (this.speed < 1) this.speed = 1
+                //if (this.speed < 1) this.speed = 1
                 this.jet()
             }
         },

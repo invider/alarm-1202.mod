@@ -15,6 +15,6 @@ function level(n) {
 
     lab.space.lander.reset(level.lander)
     lab.space.panel.reset()
-    lab.space.space.spawn()
+    lab.space.stars.spawn()
 
 }
