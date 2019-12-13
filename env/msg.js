@@ -17,7 +17,7 @@ module.exports = {
     title2: 'Low Lunar Orbit...',
 
     titles: [
-        'a powerup by invadium.com',
+        //'a powerup by invadium.com',
         'a game by Igor Khotin',
         'Powered by Collider.JAM Framework'
     ],

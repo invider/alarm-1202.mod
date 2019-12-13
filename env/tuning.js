@@ -13,4 +13,7 @@ module.exports = {
     redAlt: 300,
 
     blink: 0.5,
+
+    starFQ: 1,
+    starSpeedFactor: 0.3,
 }

@@ -1,16 +1,14 @@
-let STAR_FQ = 2
-
 // star background
 return {
     Z: 1,
     stars: [],
 
-    newStar: function() {
+    newStar: function(y) {
         let star = {
             a: true,
             c: lib.math.rndi(3),
             x: lib.math.rndi(ctx.width),
-            y: ctx.height + 20,
+            y: y,
             s: 10 + lib.math.rndi(20),
             m: 3 + lib.math.rndi(15),
         }
@@ -40,13 +38,17 @@ return {
         }
 
         // move stars
+        const FQ = env.tuning.starFQ
+        const speedFactor = env.tuning.starSpeedFactor
+
         this.stars.forEach( star => {
-            star.y -= star.s * dt * (speed/5)
+            star.y -= star.s * dt * (speed * speedFactor)
             if (star.y < 0) star.a = false
         })
 
-        if (speed > 0) {
-            if (lib.math.rndf() < STAR_FQ * dt) this.newStar()
+        if (lib.math.rndf() < FQ * abs(speed) * speedFactor * dt) {
+            if (speed < 0) this.newStar(-20)
+            else this.newStar(ctx.height + 20)
         }
     },
 
