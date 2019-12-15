@@ -22,3 +22,11 @@ function nextAddSubProblem() {
         break;
     }
 }
+
+function nextMulProblem() {
+    let base = lib.math.rndi(this.params.base-1) + 2
+    let next = lib.math.rndi(this.params.base-1) + 2
+
+    this.problem = '' + base + ' x ' + next
+    this.answer = base * next
+}
