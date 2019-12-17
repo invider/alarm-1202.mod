@@ -1,3 +1,20 @@
+function appendGoogleAnalytics() {
+	const gtag = document.createElement('script')
+	gtag.async = true
+	gtag.src = src="https://www.googletagmanager.com/gtag/js?id=UA-111208379-7"
+
+	document.head.appendChild(gtag)
+}
+
+function setupGoogleAnalytics() {
+	appendGoogleAnalytics()
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-111208379-7');
+}
+
 function setup() {
     lab.space.spawn('lander')
     trap('level', 1)
@@ -36,4 +53,6 @@ function setup() {
             trap('levelRun')
         },
     })
+
+	setupGoogleAnalytics()
 }
