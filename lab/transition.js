@@ -128,7 +128,7 @@ function draw() {
         if (t.placement === 1) {
             alignRight()
             x = rx(.97)
-            y = ry(.72)
+            y = ry(.8)
         } else {
             alignCenter()
         }

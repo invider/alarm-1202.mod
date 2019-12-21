@@ -16,4 +16,6 @@ module.exports = {
 
     starFQ: 1,
     starSpeedFactor: 0.3,
+
+    telco: 'http://hub.ikhotin.com:9001/feed/alarm'
 }

@@ -3,6 +3,7 @@ const panel = {
 
     s: 2,
     time: 0,
+    playTime: 0,
     buffer: 0,
     problem: '',
     answer: -1,
@@ -164,6 +165,8 @@ const panel = {
     },
 
     evo: function(dt) {
+        this.playTime += dt
+        lab.space.level.time += dt
         if (!this.landed) this.time += dt
 
         this.blink -= dt
