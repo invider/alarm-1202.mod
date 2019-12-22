@@ -12,6 +12,8 @@ function setupSessionClose() {
 }
 
 function setup() {
+    augment(env.tuning, env.config)
+
 	lib.analytics.setupGoogleAnalytics()
 	lib.analytics.setupGoogleAnalyticsTag()
     trap('session')
