@@ -36,7 +36,7 @@ function setup() {
                 fadeout: 1,
 
                 content: '#ffffff',
-                font: '38px moon',
+                font: '38px ' + env.style.titleFont,
                 msg: env.msg.title1,
             },
             {
@@ -46,7 +46,7 @@ function setup() {
                 fadeout: 1,
 
                 content: '#ffffff',
-                font: '38px moon',
+                font: '38px ' + env.style.titleFont,
                 msg: env.msg.title2,
             },
         ],

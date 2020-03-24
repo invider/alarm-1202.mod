@@ -20,14 +20,11 @@ const panel = {
         this.s = Math.round(ctx.width/50) / 10
 
         this.fontSize = Math.round(10*this.s)
-        //this.font = this.fontSize + 'px VT323-Regular'
-        //this.font = this.fontSize + 'px zekton'
-        //this.font = this.fontSize + 'px kenney-rocket-square'
-        this.font = this.fontSize + 'px boo-city'
-        this.font2 = this.fontSize*3 + 'px moon'
-        this.font3 = this.fontSize*1.5 + 'px boo-city'
-        this.font4 = this.fontSize*1 + 'px boo-city'
-        this.font5 = this.fontSize*1.3 + 'px boo-city'
+        this.font = this.fontSize + 'px ' + env.style.font
+        this.font2 = this.fontSize*3 + 'px ' + env.style.titleFont
+        this.font3 = this.fontSize*1.5 + 'px ' + env.style.font
+        this.font4 = this.fontSize*1 + 'px ' + env.style.font
+        this.font5 = this.fontSize*1.3 + 'px ' + env.style.font
     },
 
     reset: function(digit) {
@@ -293,7 +290,7 @@ const panel = {
             if (lab.space.level) {
                 text(lab.space.level.problem + ' = ' + input,
                     xanchor3 + mw3*0.15,
-                    yanchor3 + mh3*0.45)
+                    yanchor3 + mh3*0.47)
             }
 
         }
