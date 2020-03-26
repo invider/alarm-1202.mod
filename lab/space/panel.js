@@ -211,7 +211,7 @@ const panel = {
         ctx.font = this.font
 
         let xbase = xanchor1 + 20*s
-        let ybase = yanchor1 + 14*s
+        let ybase = yanchor1 + 17*s
         let lf = 3
 
         ctx.fillStyle = this.altColor(alt)
@@ -222,7 +222,7 @@ const panel = {
         ctx.fillText(env.msg.speed + ': ' + speed + env.msg.speedUnit, xbase, ybase)
 
         xbase = xanchor2 + 20*s
-        ybase = yanchor2 + 14*s
+        ybase = yanchor2 + 17*s
         ctx.fillStyle = '#40FF20'
 
         ctx.fillText(env.msg.level + ': ' + lab.space.level.id, xbase, ybase)
@@ -261,15 +261,15 @@ const panel = {
                 yanchor3 + mh3*0.6)
 
             triangle(
-                xanchor3 + mw3*.22, yanchor3 + mh3*.64,
-                xanchor3 + mw3*.26, yanchor3 + mh3*.56,
-                xanchor3 + mw3*.26, yanchor3 + mh3*.72
+                xanchor3 + mw3*.22, yanchor3 + mh3*.59,
+                xanchor3 + mw3*.26, yanchor3 + mh3*.51,
+                xanchor3 + mw3*.26, yanchor3 + mh3*.67
             )
 
             triangle(
-                xanchor3 + mw3*.80, yanchor3 + mh3*.64,
-                xanchor3 + mw3*.76, yanchor3 + mh3*.56,
-                xanchor3 + mw3*.76, yanchor3 + mh3*.72
+                xanchor3 + mw3*.80, yanchor3 + mh3*.59,
+                xanchor3 + mw3*.76, yanchor3 + mh3*.51,
+                xanchor3 + mw3*.76, yanchor3 + mh3*.67
             )
 
         } else {
