@@ -22,7 +22,7 @@ const panel = {
         this.fontSize = Math.round(10*this.s)
         this.font = this.fontSize + 'px ' + env.style.font
         this.font2 = this.fontSize*3 + 'px ' + env.style.titleFont
-        this.font3 = this.fontSize*1.5 + 'px ' + env.style.font
+        this.font3 = this.fontSize*1.2 + 'px ' + env.style.font
         this.font4 = this.fontSize*1 + 'px ' + env.style.font
         this.font5 = this.fontSize*1.3 + 'px ' + env.style.font
     },
@@ -98,7 +98,7 @@ const panel = {
 
                         content: '#ffffff',
                         font: '38px moon',
-                        msg: env.msg.level + ' ' + level,
+                        msg: env.msg.levelMessage + ' ' + level,
                     },
                 ],
 
@@ -290,7 +290,7 @@ const panel = {
             if (lab.space.level) {
                 text(lab.space.level.problem + ' = ' + input,
                     xanchor3 + mw3*0.15,
-                    yanchor3 + mh3*0.47)
+                    yanchor3 + mh3*0.5)
             }
 
         }
