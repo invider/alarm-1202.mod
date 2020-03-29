@@ -39,26 +39,30 @@ module.exports = function(init) {
             // x, y, lifespan, force,
             //size, vsize, speed, vspeed,
             //startAngle, spread, minLifespan, vLifespan) {
-            let fc = this.flames.reduce((a, c) => { if (c.alive) a++ }, 0)
+            let fc = this.flames.reduce((c, f) => f.alive? c++:c, 0)
             if (fc === 0) this.flames = []
 
             const s = this.s
-            this.flames.push(new dna.Explosion(
+            const e1 = new dna.Explosion(
                 -7*s, 12*s, // x, y
                 1.5, 300,
                 2*s, 2*s,
                 120, 0,
                 Math.PI/2-0.2, 0.4,
                 0.6, 0.4
-            ))
-            this.flames.push(new dna.Explosion(
+            )
+            this.flames.push(e1)
+
+            const e2 = new dna.Explosion(
                 7*s, 12*s, // x, y
                 1.5, 300,
                 2*s, 2*s,
                 120, 0,
                 Math.PI/2-0.2, 0.4,
                 0.6, 0.4
-            ))
+            )
+            this.flames.push(e2)
+
             lib.sfx(res.sfx.burn2, 0.7)
         },
 

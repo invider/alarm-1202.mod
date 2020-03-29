@@ -28,6 +28,7 @@ const panel = {
     },
 
     reset: function(digit) {
+        this.time = 0
         this.buffer = 0
         this.landed = false
         if (lab.space.level) lab.space.level.nextProblem()

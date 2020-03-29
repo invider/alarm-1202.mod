@@ -25,6 +25,9 @@ function level(n) {
     augment(level, _.lvl.level[0])
     log('level: ' + level.id)
 
+    if (lab.space.level) {
+        lab.space.detach(lab.space.level)
+    }
     lab.space.attach(level, 'level')
 
     lab.space.lander.reset(level.lander)

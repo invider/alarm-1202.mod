@@ -44,7 +44,9 @@ var Explosion = function(x, y, lifespan, force,
 
         this.mutate = function(delta) {
             this.lifespan -= delta
-            if (this.lifespan < 0) this.alive = false
+            if (this.lifespan < 0) {
+                this.alive = false
+            }
 
             // movement
             this.x += this.dx * delta
@@ -130,6 +132,8 @@ Explosion.prototype.evo = function(delta) {
 
     if (pn === 0 && this.lifespan === 0) {
         this.alive = false
+        this.dead = true
+        this.kill()
     }
 }
 
@@ -141,6 +145,10 @@ Explosion.prototype.draw = function() {
         if (p.alive) p.draw()
     })
     restore()
+}
+
+Explosion.prototype.kill = function() {
+    if (this.__) this.__.detach(this)
 }
 
 module.exports = Explosion
