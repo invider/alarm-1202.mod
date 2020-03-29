@@ -57,4 +57,5 @@ function setup() {
     })
 
     setupSessionClose()
+    lib.util.hideCursor()
 }
