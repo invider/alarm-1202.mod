@@ -8,6 +8,7 @@ const defaults = {
     fadein: .5,
     keep: 1,
     fadeout: .5,
+    ystep: 32,
     background: '#000000',
 }
 
@@ -114,6 +115,7 @@ function draw() {
     }
     background(this.config.background)
 
+    const ystep = this.config.ystep
     this.config.text.forEach(t => {
         if (!t.state || t.state === WAIT || t.state === HIDDEN) return
 
@@ -132,7 +134,12 @@ function draw() {
         } else {
             alignCenter()
         }
-        text(t.msg, x, y)
+
+        const lines = t.msg.split('\n')
+        lines.forEach(l => {
+            text(l, x, y)
+            y += ystep
+        })
     })
 
     //text('#' + this.state, rx(.5), ry(.5))

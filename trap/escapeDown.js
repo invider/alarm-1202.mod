@@ -1,4 +1,5 @@
 function escapeDown(e) {
+    /*
     // figure out the next level
     let n = lab.space.level.id
     if (!n) n = 0
@@ -6,4 +7,7 @@ function escapeDown(e) {
     if (n >= _.lvl.level.length) n = 1
 
     trap('level', n)
+    */
+    lab.space.panel.landed = true
+    lab.space.panel.accuracy = -1
 }

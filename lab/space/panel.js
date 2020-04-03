@@ -239,6 +239,7 @@ const panel = {
             let msg = env.msg.successfulLanding
             if (this.accuracy === 0) msg = env.msg.crashLanding
             else if (this.accuracy === 1) msg = env.msg.harshLanding
+            else if (this.accuracy === -1) msg = env.msg.selectNextLevel
 
             alignCenter()
             baseMiddle()

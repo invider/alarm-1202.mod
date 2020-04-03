@@ -12,6 +12,7 @@ module.exports = {
     successfulLanding: 'Successfull Landing!',
     harshLanding: 'Hard Landing!',
     crashLanding: 'Crash Landing!',
+    selectNextLevel: 'Select Next Level',
     paused: 'Paused',
 
     title1: '1969',
@@ -20,6 +21,7 @@ module.exports = {
     titles: [
         //'a powerup by invadium.com',
         'a game by Igor Khotin',
-        'Powered by Collider.JAM Framework'
+        'Powered by Collider.JAM Framework',
+        '"That\'s one small step for man, one giant leap for mankind."\n- Neil Armstrong',
     ],
 }
