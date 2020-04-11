@@ -74,25 +74,34 @@ const panel = {
 
             const level = this.targetLevel
 
+            let msg = lib.math.rnde(env.msg.titles)
+            let keep = 0
+            
+            const icolon = msg.indexOf(':')
+            if (icolon > 0) {
+                keep = parseInt(msg)
+                msg = msg.substring(icolon + 1).trim()
+            }
+
             lab.transition.transit({
                 fadein: 1,
-                keep: 7,
+                keep: 7 + keep,
                 fadeout: 2,
 
                 text: [
                     {
                         at: 1,
                         fadein: 1,
-                        keep: 1,
+                        keep: 1 + keep,
                         fadeout: 1,
 
                         placement: 1,
                         content: '#ffffff',
                         font: '28px moon',
-                        msg: lib.math.rnde(env.msg.titles),
+                        msg: msg,
                     },
                     {
-                        at: 4.5,
+                        at: 4.5 + keep,
                         fadein: 1,
                         keep: 1,
                         fadeout: 1,
