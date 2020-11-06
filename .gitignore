@@ -1,5 +1,8 @@
 .DS_Store
 
 # collider
+trap/telco*
+.meta.cache
 dist
 types.ts
+
