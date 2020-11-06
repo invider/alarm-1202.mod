@@ -1,1 +1,3 @@
-const telcoId = 'alarm'
+function init() {
+    env.telcoId = 'alarm'
+}

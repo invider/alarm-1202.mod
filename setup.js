@@ -13,6 +13,7 @@ function setupSessionClose() {
 
 function setup() {
     augment(env.tuning, env.config)
+    env.sessionStart = Date.now()
 
 	lib.analytics.setupGoogleAnalytics()
 	lib.analytics.setupGoogleAnalyticsTag()

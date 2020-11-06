@@ -1,5 +1,5 @@
 const telco = {
-    LEVEL_START: 2,
-    LEVEL_COMPLETE: 3,
+    LEVEL_START: 1,
+    LEVEL_COMPLETE: 2,
     SESSION_END: 9,
 }
