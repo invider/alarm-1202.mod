@@ -13,8 +13,8 @@ module.exports = function(speed) {
     }
 
     trap('telco', {
-        type: 3,
-        payload: [
+        y: env.telco.LEVEL_COMPLETE,
+        z: [
             lab.space.level.id,
             outcome,
             round(speed),

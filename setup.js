@@ -2,8 +2,8 @@ function setupSessionClose() {
     window.onunload = function() {
         
         trap('telco', {
-            type: 9,
-            payload: [
+            y: SESSION_END,
+            z: [
                 lib.util.sessionTime(),
                 lib.util.getResolution(),
             ]

@@ -40,8 +40,8 @@ function level(n) {
     })
 
     trap('telco', {
-        type: 2,
-        payload: [
+        y: env.telco.LEVEL_START,
+        z: [
             n,
             env.levelTries + ':' + env.tries,
             round(lab.space.panel.playTime),
